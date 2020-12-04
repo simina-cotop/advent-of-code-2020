@@ -5,15 +5,11 @@ from typing import *
 def day1_part1(all_int_lines: List[int]) -> None:
 	year = 2020
 
-	'''for idx, el in enumerate(all_int_lines):
-		diff = year - el
-		if diff in all_int_lines:
-			print(el, diff, el*diff)'''
-
 	for idx1, el1 in enumerate(all_int_lines):
-		for idx2 in range(idx1+1, len(all_int_lines)):
-			if el1 + all_int_lines[idx2] == year:
-				print(el1, all_int_lines[idx2], el1*all_int_lines[idx2])
+		for el2 in all_int_lines[idx1+1:]:
+
+			if el1 + el2 == year:
+				print(el1, el2, el1 * el2)
 	
 
 
@@ -21,10 +17,11 @@ def day1_part2(all_int_lines: List[int]) -> None:
 	year = 2020
 
 	for idx1, el1 in enumerate(all_int_lines):
-		for idx2 in range(idx1+1, len(all_int_lines)):
-			for idx3 in range(idx2+1, len(all_int_lines)):
-				if el1 + all_int_lines[idx2] + all_int_lines[idx3] == year:
-					print(el1, all_int_lines[idx2], + all_int_lines[idx3], el1*all_int_lines[idx2]*+ all_int_lines[idx3])
+		for idx2, el2 in enumerate(all_int_lines[idx1+1:]):
+			for el3 in all_int_lines[idx2+1:]:
+
+				if el1 + el2 + el3 == year:
+					print(el1, el2, el3, el1 * el2 * el3)
 
 
 
