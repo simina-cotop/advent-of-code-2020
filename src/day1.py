@@ -38,4 +38,3 @@ if __name__ == "__main__":
 	print(len(all_int_lines))
 	day1_part1(all_int_lines)
 	day1_part2(all_int_lines)
-	
